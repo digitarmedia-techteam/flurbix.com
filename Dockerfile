@@ -16,18 +16,18 @@ COPY . .
 RUN npm run build
 
 # Production stage
-FROM node:18-alpine
+FROM node:18-alpine AS runner
 
 WORKDIR /app
+ENV NODE_ENV=production
 
-# Install serve to run the built application
-RUN npm install -g serve
+# Copy built files and dependencies from builder
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/.next ./.next
 
-# Copy built files from builder
-COPY --from=builder /app/dist ./dist
-
-# Expose port 3004
+# Expose port 3005
 EXPOSE 3005
 
-# Start the application
-CMD ["serve", "-s", "dist", "-l", "3005"]
+# Start the Next.js server
+CMD ["npm", "run", "start"]
