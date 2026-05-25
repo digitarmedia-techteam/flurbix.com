@@ -84,7 +84,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${dmSans.variable} font-dm dark`}
+      className={`${syne.variable} ${dmSans.variable} font-dm`}
     >
       <head>
         <script
@@ -92,10 +92,10 @@ export default function RootLayout({
             __html: `
               try {
                 const stored = localStorage.getItem('flurbix-theme');
-                if (stored === 'light') {
-                  document.documentElement.classList.remove('dark');
-                } else {
+                if (stored === 'dark') {
                   document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
                 }
               } catch (_) {}
             `

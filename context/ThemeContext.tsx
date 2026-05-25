@@ -10,18 +10,20 @@ interface ThemeContextValue {
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
-  theme: 'dark',
+  theme: 'light',
   toggleTheme: () => {},
 })
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark')
+  const [theme, setTheme] = useState<Theme>('light')
 
   useEffect(() => {
-    // Default is dark (set on <html> during SSR).
-    // Only override if user previously chose light.
+    // Default is light. Only switch to dark if user previously chose dark.
     const stored = localStorage.getItem('flurbix-theme') as Theme | null
-    if (stored === 'light') {
+    if (stored === 'dark') {
+      setTheme('dark')
+      document.documentElement.classList.add('dark')
+    } else {
       setTheme('light')
       document.documentElement.classList.remove('dark')
     }
