@@ -289,7 +289,6 @@ export default function ContactPage() {
   })
   const [status, setStatus] = useState<SubmitStatus>('idle')
   const [errors, setErrors] = useState<string[]>([])
-  const [charCount] = useState(0)
   const formRef = useRef<HTMLFormElement>(null)
 
   // Scroll reveal
@@ -348,56 +347,154 @@ export default function ContactPage() {
       <Navbar />
 
       <main className="min-h-screen bg-[#F8FAFC] dark:bg-[#0F172A] transition-colors duration-300">
-        {/* ── Hero Banner ──────────────────────────────────────── */}
-        <section className="relative overflow-hidden pt-24 pb-16 px-6">
-          {/* Gradient blobs */}
-          <div
-            aria-hidden
-            className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%)',
-            }}
-          />
-          <div
-            aria-hidden
-            className="absolute -top-16 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(139,92,246,0.10) 0%, transparent 70%)',
-            }}
-          />
+        {/* ── Hero + Infographic ──────────────────────────── */}
+        <section className="relative overflow-hidden pt-14 pb-6 px-6">
+          {/* Subtle background blobs */}
+          <div aria-hidden className="absolute -top-24 -left-24 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.10) 0%, transparent 68%)' }} />
+          <div aria-hidden className="absolute top-0 -right-24 w-[360px] h-[360px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 68%)' }} />
 
-          <div className="max-w-3xl mx-auto text-center relative z-10">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 pill-border px-4 py-1.5 rounded-full mb-6 reveal">
-              <span
-                className="w-2 h-2 rounded-full"
-                style={{ background: 'linear-gradient(90deg,#06B6D4,#8B5CF6)', animation: 'pulseGlow 1.5s ease-in-out infinite alternate' }}
-              />
-              <span className="font-dm text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
-                Get in Touch
-              </span>
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center relative z-10">
+
+            {/* LEFT — copy */}
+            <div className="reveal-left">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 pill-border px-3.5 py-1 rounded-full mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" style={{ animation: 'pulseGlow 1.5s ease-in-out infinite alternate' }} />
+                <span className="font-dm text-[11px] font-semibold text-slate-500 uppercase tracking-widest">Get in Touch</span>
+              </div>
+
+              <h1 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 dark:text-white leading-[1.15] mb-3">
+                We&apos;d love to{' '}
+                <span className="gradient-text">hear from you</span>
+              </h1>
+
+              <p className="font-dm text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-md mb-5">
+                Questions, demos, partnerships — our team responds in under 24 hours.
+              </p>
+
+              {/* Quick contact chips */}
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { emoji: '✉️', label: 'contact@flurbix.com', href: 'mailto:contact@flurbix.com' },
+                  { emoji: '📞', label: '+1 (800) FLURBIX', href: 'tel:+18003587249' },
+                ].map((chip) => (
+                  <a
+                    key={chip.label}
+                    href={chip.href}
+                    className="inline-flex items-center gap-1.5 font-dm text-xs font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-full px-3.5 py-1.5 hover:border-cyan-400 hover:text-cyan-600 transition-all duration-200"
+                  >
+                    <span>{chip.emoji}</span>
+                    {chip.label}
+                  </a>
+                ))}
+              </div>
             </div>
 
-            <h1 className="font-syne font-bold text-4xl md:text-5xl lg:text-6xl text-slate-900 dark:text-white leading-tight mb-5 reveal" style={{ transitionDelay: '80ms' }}>
-              We&apos;d love to{' '}
-              <span className="gradient-text">hear from you</span>
-            </h1>
+            {/* RIGHT — Response Journey Infographic */}
+            <div className="reveal-right">
+              <div
+                className="rounded-2xl border border-slate-200 dark:border-slate-700/60 overflow-hidden bg-gradient-to-br from-white to-cyan-50/30 dark:from-slate-800/80 dark:to-slate-900/80"
+              >
+                {/* Infographic header */}
+                <div className="px-5 py-3.5 border-b border-slate-100 dark:border-slate-700/50 flex items-center justify-between" style={{ background: 'linear-gradient(90deg,rgba(6,182,212,0.06),rgba(139,92,246,0.06))' }}>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-green-400" style={{ animation: 'pulseGlow 1.8s ease-in-out infinite alternate' }} />
+                    <span className="font-syne font-semibold text-xs text-slate-700 dark:text-slate-200">Support Response Journey</span>
+                  </div>
+                  <span className="font-dm text-[10px] text-slate-400 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">Live</span>
+                </div>
 
-            <p className="font-dm text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl mx-auto reveal" style={{ transitionDelay: '160ms' }}>
-              Whether you have a question, want a demo, or just want to say hello —
-              our team is here and ready to help.
-            </p>
+                {/* Timeline steps */}
+                <div className="px-5 py-4 space-y-0">
+                  {[
+                    { step: '01', icon: '✉️', title: 'Message Received', desc: 'Instantly logged in our system', time: '0s', color: '#06B6D4', done: true },
+                    { step: '02', icon: '🔔', title: 'Team Notified', desc: 'Right expert gets your query', time: '~30s', color: '#8B5CF6', done: true },
+                    { step: '03', icon: '👤', title: 'Expert Assigned', desc: 'Dedicated support agent picks up', time: '<1 hr', color: '#06B6D4', done: false },
+                    { step: '04', icon: '💬', title: 'Response Delivered', desc: 'Personalised reply to you', time: '<24 hr', color: '#8B5CF6', done: false },
+                  ].map((item, i, arr) => (
+                    <div key={item.step} className="flex gap-3 items-stretch">
+                      {/* Connector column */}
+                      <div className="flex flex-col items-center" style={{ minWidth: 28 }}>
+                        <div
+                          className={`w-7 h-7 rounded-full flex items-center justify-center text-sm flex-shrink-0 border-2 ${
+                            item.done ? '' : 'bg-[#F8FAFC] dark:bg-slate-800/50 border-[#E2E8F0] dark:border-slate-700'
+                          }`}
+                          style={item.done ? {
+                            background: `linear-gradient(135deg,${item.color}22,${item.color}44)`,
+                            borderColor: item.color,
+                          } : undefined}
+                        >
+                          {item.done ? (
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={item.color} strokeWidth="3" strokeLinecap="round">
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                          ) : (
+                            <span className="font-dm text-[9px] font-bold text-slate-400 dark:text-slate-500">{item.step}</span>
+                          )}
+                        </div>
+                        {i < arr.length - 1 && (
+                          <div
+                            className={`flex-1 w-px my-0.5 ${item.done ? '' : 'bg-slate-200 dark:bg-slate-700'}`}
+                            style={item.done ? {
+                              background: `linear-gradient(to bottom, ${item.color}80, ${item.color}20)`,
+                              minHeight: 18,
+                            } : {
+                              minHeight: 18,
+                            }}
+                          />
+                        )}
+                      </div>
+                      {/* Content */}
+                      <div className="pb-3 flex-1">
+                        <div className="flex items-center justify-between">
+                          <span className="font-dm text-xs font-semibold text-slate-700 dark:text-slate-200">
+                            <span className="mr-1">{item.icon}</span>
+                            {item.title}
+                          </span>
+                          <span
+                            className={`font-dm text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+                              item.done ? '' : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500'
+                            }`}
+                            style={item.done ? {
+                              background: `${item.color}18`,
+                              color: item.color,
+                            } : undefined}
+                          >
+                            {item.time}
+                          </span>
+                        </div>
+                        <p className="font-dm text-[11px] text-slate-400 mt-0.5">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Stats strip */}
+                <div className="border-t border-slate-100 dark:border-slate-700/50 px-5 py-3 grid grid-cols-3 gap-0 divide-x divide-slate-100 dark:divide-slate-700/50">
+                  {[
+                    { value: '<24h', label: 'Avg Response' },
+                    { value: '98.7%', label: 'Satisfaction' },
+                    { value: '2,400+', label: 'Customers' },
+                  ].map((stat) => (
+                    <div key={stat.label} className="text-center px-3 first:pl-0 last:pr-0">
+                      <div className="font-syne font-bold text-base text-slate-900 dark:text-white" style={{ background: 'linear-gradient(90deg,#06B6D4,#8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{stat.value}</div>
+                      <div className="font-dm text-[10px] text-slate-400 mt-0.5">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ── Info Cards Row ───────────────────────────────────── */}
-        <section className="px-6 pb-12">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+        <section className="px-6 pb-6">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3">
             {infoCards.map((card, i) => (
               <div
                 key={card.label}
-                className="reveal group bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-5 transition-all duration-300 hover:border-cyan-300 dark:hover:border-cyan-500/40 hover:shadow-lg hover:-translate-y-1"
-                style={{ transitionDelay: `${i * 80}ms` }}
+                className="reveal group bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl p-4 transition-all duration-300 hover:border-cyan-300 dark:hover:border-cyan-500/40 hover:shadow-md hover:-translate-y-0.5"
+                style={{ transitionDelay: `${i * 60}ms` }}
               >
                 {card.href ? (
                   <a href={card.href} target={card.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="block">
@@ -412,7 +509,7 @@ export default function ContactPage() {
         </section>
 
         {/* ── Two Column: Form + Sidebar ───────────────────────── */}
-        <section className="px-6 pb-24">
+        <section className="px-6 pb-12">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-8 items-start">
 
             {/* ── Contact Form (3/5) ── */}
@@ -677,14 +774,14 @@ function CardContent({ card }: { card: typeof infoCards[0] }) {
   return (
     <>
       <div
-        className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 text-cyan-500 dark:text-cyan-400"
+        className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 text-cyan-500 dark:text-cyan-400"
         style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.1), rgba(139,92,246,0.08))', border: '1px solid rgba(6,182,212,0.2)' }}
       >
         {card.icon}
       </div>
-      <p className="font-dm text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">{card.label}</p>
-      <p className="font-syne font-bold text-sm text-slate-900 dark:text-white mb-1 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors">{card.value}</p>
-      <p className="font-dm text-xs text-slate-400 dark:text-slate-500">{card.sub}</p>
+      <p className="font-dm text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-0.5">{card.label}</p>
+      <p className="font-syne font-bold text-xs text-slate-900 dark:text-white mb-0.5 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors">{card.value}</p>
+      <p className="font-dm text-[10px] text-slate-400 dark:text-slate-500">{card.sub}</p>
     </>
   )
 }

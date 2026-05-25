@@ -275,7 +275,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Your message has been sent successfully! We'll be in touch soon.',
+      message: "Your message has been sent successfully! We\u2019ll be in touch soon.",
     })
   } catch (err) {
     console.error('[Contact API Error]', err)
