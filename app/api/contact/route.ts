@@ -14,7 +14,14 @@ async function sendEmail({
 }) {
   const apiKey = process.env.ELASTIC_EMAIL_API_KEY
   if (!apiKey) {
-    throw new Error('ELASTIC_EMAIL_API_KEY is not set')
+    console.warn('⚠️ WARNING: ELASTIC_EMAIL_API_KEY is not set. Simulating email send and logging to console.')
+    console.log('--------------------------------------------------')
+    console.log(`[MOCKED EMAIL]`)
+    console.log(`To: ${to}`)
+    console.log(`Subject: ${subject}`)
+    console.log(`Body HTML Length: ${bodyHtml.length} chars`)
+    console.log('--------------------------------------------------')
+    return { success: true, mocked: true }
   }
 
   const params = new URLSearchParams()
