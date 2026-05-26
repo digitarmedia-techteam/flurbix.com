@@ -11,34 +11,34 @@ interface Step {
 const steps: Step[] = [
   {
     number: 1,
-    title: 'Create Campaign',
+    title: 'Setup your Flurbix',
     description:
-      'Define your campaign goals, set budgets, assign team members, and connect your channels. Flurbix gives you a single source of truth from day one.',
+      'Train your Flurbix by providing a few initial details - set up your templates, upload your deck, choose your target categories, and specify the job positions you want to reach. That’s it.',
   },
   {
     number: 2,
-    title: 'Automate Processes',
+    title: 'Add your Target Brand',
     description:
-      'Set up trigger-based rules that handle repetitive tasks automatically. From bid adjustments to approval workflows, let Flurbix do the heavy lifting.',
+      'Just paste your website or app URL, and Flurbix will handle the rest — analyzing the client business, finding the right prospects, and targeting the most relevant contacts automatically.',
   },
   {
     number: 3,
-    title: 'Collaborate With Team',
+    title: 'Launch & Automate outreach',
     description:
-      'Loop in designers, analysts, media buyers, and stakeholders in real time. Comments, approvals, and task assignments keep everyone moving in sync.',
+      'You’ll receive a complete campaign preview along with the contact details of the targeted decision-makers. Once you confirm, Flurbix will automatically start reaching out to the right people and handle follow-ups for you as well.',
   },
-  {
-    number: 4,
-    title: 'Analyze Performance',
-    description:
-      'Monitor campaign metrics as they happen with live dashboards and custom reports. Identify what\'s working and double down with data-backed decisions.',
-  },
-  {
-    number: 5,
-    title: 'Scale Operations',
-    description:
-      'Duplicate winning campaigns, automate scaling rules, and expand to new channels with confidence. Flurbix grows as fast as your team does.',
-  },
+  // {
+  //   number: 4,
+  //   title: 'Auto Followup',
+  //   description:
+  //     'Monitor campaign metrics as they happen with live dashboards and custom reports. Identify what\'s working and double down with data-backed decisions.',
+  // },
+  // {
+  //   number: 5,
+  //   title: 'Scale Operations',
+  //   description:
+  //     'Duplicate winning campaigns, automate scaling rules, and expand to new channels with confidence. Flurbix grows as fast as your team does.',
+  // },
 ]
 
 export default function HowItWorks() {
@@ -90,9 +90,9 @@ export default function HowItWorks() {
         </p>
         <h2
           id="hiw-heading"
-          className="font-syne font-bold text-4xl md:text-5xl text-navy dark:text-white text-center transition-colors duration-300"
+          className="font-syne font-bold text-3xl md:text-4xl text-navy dark:text-white text-center transition-colors duration-300"
         >
-          From Zero to Scale in Five Steps
+          From Zero to Scale in Just Three Steps
         </h2>
 
         {/* Timeline */}

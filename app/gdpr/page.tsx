@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   title: 'GDPR Compliance — Flurbix',
   description:
     "Flurbix is fully GDPR compliant. Learn about your rights as an EU data subject, how we process personal data, and how to request your DPA.",
-  alternates: { canonical: 'https://www.flurbix.io/gdpr' },
+  alternates: { canonical: 'https://flurbix.com/gdpr' },
   openGraph: {
     title: 'GDPR Compliance — Flurbix',
-    url: 'https://www.flurbix.io/gdpr',
+    url: 'https://flurbix.com/gdpr',
     type: 'website',
   },
 }

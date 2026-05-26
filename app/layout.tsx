@@ -21,15 +21,15 @@ export const metadata: Metadata = {
   title: 'Flurbix — Campaign Operations Platform for Growth Teams',
   description:
     'Flurbix is the campaign management and marketing automation platform built for growth teams. Unify workflow automation, campaign analytics, and team collaboration.',
-  metadataBase: new URL('https://www.flurbix.io'),
+  metadataBase: new URL('https://flurbix.com'),
   alternates: {
-    canonical: 'https://www.flurbix.io',
+    canonical: 'https://flurbix.com',
   },
   openGraph: {
     title: 'Flurbix — Campaign Operations Platform for Growth Teams',
     description:
       'Flurbix is the campaign management and marketing automation platform built for growth teams. Unify workflow automation, campaign analytics, and team collaboration.',
-    url: 'https://www.flurbix.io',
+    url: 'https://flurbix.com',
     type: 'website',
     images: [
       {
@@ -53,8 +53,8 @@ const orgJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Flurbix',
-  url: 'https://www.flurbix.io',
-  logo: 'https://www.flurbix.io/logo.png',
+  url: 'https://flurbix.com',
+  logo: 'https://flurbix.com/logo.png',
   sameAs: [
     'https://twitter.com/flurbix',
     'https://www.linkedin.com/company/flurbix',

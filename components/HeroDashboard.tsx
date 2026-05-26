@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react'
 
 const campaigns = [
-  { name: 'Q2 Growth Campaign', status: 'Live', statusColor: '#22C55E', progress: 78 },
-  { name: 'Brand Retargeting', status: 'Active', statusColor: '#06B6D4', progress: 54 },
-  { name: 'Email Nurture Flow', status: 'Scheduled', statusColor: '#F59E0B', progress: 32 },
+  { name: 'Agency', status: 'Live', statusColor: '#22C55E', progress: 78 },
+  { name: 'iOS', status: 'Active', statusColor: '#06B6D4', progress: 54 },
+  { name: 'Android', status: 'Scheduled', statusColor: '#F59E0B', progress: 32 },
 ]
 
 const kpis = [

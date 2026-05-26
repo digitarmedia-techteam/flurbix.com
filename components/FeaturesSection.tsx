@@ -10,9 +10,9 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    title: 'Campaign Management',
+    title: 'One Click Brand Onboarding',
     description:
-      'Plan, launch, and track every campaign from one unified workspace. Manage budgets, timelines, and assets across all your channels.',
+      'Flurbix handles everything — from identifying the correct contacts to sending tailored emails with accurate brand information and follow-ups.',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#06B6D4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <rect x="4" y="20" width="24" height="6" rx="2" />
@@ -22,9 +22,9 @@ const features: Feature[] = [
     ),
   },
   {
-    title: 'Workflow Automation',
+    title: 'Smart Outreach Automation',
     description:
-      'Build trigger-based automations without writing a single line of code. Connect actions across campaigns, teams, and tools seamlessly.',
+      'Flurbix handles everything — from identifying the correct contacts to sending tailored emails with accurate brand information and follow-ups.',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#06B6D4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M18 4L10 16h8l-4 12 12-16h-8l4-12z" />

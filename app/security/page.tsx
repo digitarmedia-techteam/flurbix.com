@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   title: 'Security — Flurbix',
   description:
     'Learn how Flurbix protects your data with enterprise-grade security. SOC 2 Type II certified, end-to-end encryption, and 99.99% uptime SLA.',
-  alternates: { canonical: 'https://www.flurbix.io/security' },
+  alternates: { canonical: 'https://flurbix.com/security' },
   openGraph: {
     title: 'Security at Flurbix',
-    url: 'https://www.flurbix.io/security',
+    url: 'https://flurbix.com/security',
     type: 'website',
   },
 }

@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   title: 'Cookie Policy — Flurbix',
   description:
     'Learn how Flurbix uses cookies and similar tracking technologies. Understand your choices and how to manage your cookie preferences.',
-  alternates: { canonical: 'https://www.flurbix.io/cookies' },
+  alternates: { canonical: 'https://flurbix.com/cookies' },
   openGraph: {
     title: 'Cookie Policy — Flurbix',
-    url: 'https://www.flurbix.io/cookies',
+    url: 'https://flurbix.com/cookies',
     type: 'website',
   },
 }

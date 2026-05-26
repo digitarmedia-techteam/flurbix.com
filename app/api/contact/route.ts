@@ -131,7 +131,7 @@ function buildTeamEmailHtml({
           <!-- Footer -->
           <tr>
             <td style="background:#F8FAFC;border-top:1px solid #E2E8F0;padding:24px 40px;text-align:center;">
-              <p style="font-size:12px;color:#94A3B8;margin:0;">© 2025 Flurbix Inc. · <a href="https://www.flurbix.io" style="color:#06B6D4;text-decoration:none;">flurbix.io</a></p>
+              <p style="font-size:12px;color:#94A3B8;margin:0;">© 2025 Flurbix Inc. · <a href="https://flurbix.com" style="color:#06B6D4;text-decoration:none;">flurbix.io</a></p>
             </td>
           </tr>
         </table>
@@ -174,7 +174,7 @@ function buildConfirmationEmailHtml({ name }: { name: string }) {
                 Hi ${name}, we got your message! 👋
               </h1>
               <p style="font-size:15px;color:#475569;line-height:1.7;margin:0 0 20px;">
-                Thank you for reaching out to Flurbix. Our team has received your message and will get back to you within <strong style="color:#0F172A;">1–2 business days</strong>.
+                Thank you for reaching out to Flurbix. Our team has received your message and will get back to you within <strong style="color:#0F172A;">24 business hours</strong>.
               </p>
               <p style="font-size:15px;color:#475569;line-height:1.7;margin:0 0 32px;">
                 In the meantime, feel free to explore our platform, read our latest docs, or follow us on social media.
@@ -188,17 +188,17 @@ function buildConfirmationEmailHtml({ name }: { name: string }) {
               <table cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="padding-right:12px;">
-                    <a href="https://www.flurbix.io" style="display:inline-block;background:#F1F5F9;color:#0F172A;font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;text-decoration:none;border:1px solid #E2E8F0;">
+                    <a href="https://flurbix.com" style="display:inline-block;background:#F1F5F9;color:#0F172A;font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;text-decoration:none;border:1px solid #E2E8F0;">
                       🌐 Visit Website
                     </a>
                   </td>
                   <td style="padding-right:12px;">
-                    <a href="https://www.flurbix.io/#pricing" style="display:inline-block;background:#F1F5F9;color:#0F172A;font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;text-decoration:none;border:1px solid #E2E8F0;">
+                    <a href="https://flurbix.com/#pricing" style="display:inline-block;background:#F1F5F9;color:#0F172A;font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;text-decoration:none;border:1px solid #E2E8F0;">
                       💰 View Pricing
                     </a>
                   </td>
                   <td>
-                    <a href="https://www.flurbix.io/#product" style="display:inline-block;background:linear-gradient(135deg,#06B6D4,#8B5CF6);color:#ffffff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;">
+                    <a href="https://flurbix.com/#product" style="display:inline-block;background:linear-gradient(135deg,#06B6D4,#8B5CF6);color:#ffffff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;">
                       🚀 Start Free Trial
                     </a>
                   </td>
@@ -211,7 +211,7 @@ function buildConfirmationEmailHtml({ name }: { name: string }) {
             <td style="background:#F8FAFC;border-top:1px solid #E2E8F0;padding:24px 40px;text-align:center;">
               <p style="font-size:12px;color:#94A3B8;margin:0 0 6px;">© 2025 Flurbix Inc. All rights reserved.</p>
               <p style="font-size:12px;color:#94A3B8;margin:0;">
-                <a href="https://www.flurbix.io" style="color:#06B6D4;text-decoration:none;">flurbix.io</a>
+                <a href="https://flurbix.com" style="color:#06B6D4;text-decoration:none;">flurbix.io</a>
                 &nbsp;·&nbsp;
                 <a href="https://twitter.com/flurbix" style="color:#06B6D4;text-decoration:none;">Twitter</a>
                 &nbsp;·&nbsp;

@@ -25,10 +25,10 @@ const sidebarIcons = [
 ]
 
 const kpis = [
-  { label: 'Impressions', value: '2.4M' },
-  { label: 'Clicks', value: '148K' },
-  { label: 'Conversions', value: '12.3K' },
-  { label: 'ROAS', value: '4.2x' },
+  { label: 'Client Approach', value: '134' },
+  { label: 'Mail Sent', value: '1132' },
+  { label: "Mail's Delivered", value: "1081" },
+  { label: 'Onboarded', value: 11 },
 ]
 
 const workflowNodes = ['Trigger', 'Filter', 'Action', 'Notify']
@@ -88,7 +88,7 @@ export default function ProductShowcase() {
             <span className="w-3 h-3 rounded-full bg-[#22C55E]" aria-hidden="true" />
             <div className="flex-1 flex justify-center">
               <div className="bg-white dark:bg-[#0F172A] border border-slate-200 dark:border-transparent rounded-md px-4 py-1 text-xs font-dm text-slate-500 dark:text-subtle text-center max-w-xs w-full transition-colors duration-300">
-                app.flurbix.io/dashboard
+                https://app.flurbix.com/dashboard
               </div>
             </div>
           </div>

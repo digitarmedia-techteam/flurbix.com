@@ -10,10 +10,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { label: 'Campaigns Managed', target: 10000, suffix: '+', decimals: 0 },
-  { label: 'Teams Using Flurbix', target: 500, suffix: '+', decimals: 0 },
-  { label: 'Uptime SLA', target: 99.99, suffix: '%', decimals: 2 },
-  { label: 'Events Processed', target: 50, suffix: 'M+', decimals: 0 },
+  { label: 'Client Onboarded', target: 2650, suffix: '+', decimals: 0 },
+  { label: 'Trusted By', target: 40, suffix: '+', decimals: 0 },
+  { label: 'Uptime SLA', target: 99.98, suffix: '%', decimals: 2 },
+  { label: 'Outreach Sent', target: 33, suffix: 'K+', decimals: 0 },
 ]
 
 function easeOutExpo(t: number): number {

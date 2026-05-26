@@ -40,7 +40,7 @@ const infoCards = [
     label: 'Email Us',
     value: 'contact@flurbix.com',
     href: 'mailto:contact@flurbix.com',
-    sub: 'We reply within 1–2 business days',
+    sub: 'We reply within 24 business hours',
   },
   {
     icon: (
