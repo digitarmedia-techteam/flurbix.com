@@ -10,6 +10,7 @@ interface LegalLayoutProps {
   lastUpdated: string
   tocItems: TocItem[]
   children: ReactNode
+  topWidget?: ReactNode
 }
 
 export default function LegalLayout({
@@ -18,6 +19,7 @@ export default function LegalLayout({
   lastUpdated,
   tocItems,
   children,
+  topWidget,
 }: LegalLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col bg-surface dark:bg-navy text-navy dark:text-white">
@@ -51,6 +53,9 @@ export default function LegalLayout({
               </span>
             </div>
           </div>
+
+          {/* Top Widget (e.g. GDPR rights widget) */}
+          {topWidget && <div className="mb-16">{topWidget}</div>}
 
           {/* Two-Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
