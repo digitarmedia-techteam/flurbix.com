@@ -260,18 +260,20 @@ export async function POST(req: NextRequest) {
     const message = String(body.message).trim()
 
     // Send notification to the Flurbix team
-    await sendEmail({
+    const teamEmailResponse = await sendEmail({
       to: 'contact@flurbix.com',
       subject: `[Contact Form] ${subject} — from ${name}`,
       bodyHtml: buildTeamEmailHtml({ name, email, company, phone, subject, message }),
     })
+    console.log('Team email response:', teamEmailResponse)
 
     // Send confirmation to the submitter
-    await sendEmail({
+    const confirmationEmailResponse = await sendEmail({
       to: email,
       subject: `We received your message — Flurbix`,
       bodyHtml: buildConfirmationEmailHtml({ name }),
     })
+    console.log('Confirmation email response:', confirmationEmailResponse)
 
     return NextResponse.json({
       success: true,

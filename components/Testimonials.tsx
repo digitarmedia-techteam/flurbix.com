@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     initials: 'SC',
     avatarBg: '#8B5CF6',
     quote:
-      'Flurbix completely changed how we run campaigns for our clients. The automation alone saves our team 15 hours a week. We went from managing chaos in spreadsheets to having full visibility into every campaign in real time.',
+      'Flurbix completely changed how we approach a client. The automation alone saves our team 15 hours a week. We went from managing chaos in spreadsheets to having full visibility into every campaign in real time.',
   },
   {
     name: 'Marcus Rivera',

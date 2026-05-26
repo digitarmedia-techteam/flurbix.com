@@ -22,12 +22,6 @@ export default function HeroSection() {
         >
           <span
             className="block opacity-0"
-            style={{ animation: 'fadeUp 0.7s ease 0.1s forwards' }}
-          >
-            Run Campaigns.
-          </span>
-          <span
-            className="block opacity-0"
             style={{ animation: 'fadeUp 0.7s ease 0.25s forwards' }}
           >
             Automate Workflows.

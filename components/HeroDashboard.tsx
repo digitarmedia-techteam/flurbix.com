@@ -9,7 +9,7 @@ const campaigns = [
 ]
 
 const kpis = [
-  { label: 'Active Campaigns', value: '24', delta: '+12%', up: true },
+  { label: 'Active Clients', value: '24', delta: '+12%', up: true },
   { label: 'Revenue Managed', value: '$2.4M', delta: '+34%', up: true },
   { label: 'Average ROAS', value: '4.2×', delta: '+0.8×', up: true },
 ]
@@ -111,7 +111,7 @@ export default function HeroDashboard() {
             {/* Campaign list */}
             <div className="col-span-2 rounded-xl p-3.5 border bg-slate-50 border-slate-200 dark:bg-[#1E293B] dark:border-white/5">
               <p className="font-syne text-[10px] font-semibold text-cyan tracking-[0.12em] uppercase mb-3">
-                Campaigns
+                Clients
               </p>
               <div className="space-y-3.5">
                 {campaigns.map((c) => (

@@ -1,8 +1,33 @@
-const footerLinks = {
-  Product: ['Dashboard', 'Campaigns', 'Automation', 'Analytics', 'Integrations'],
-  Company: ['About', 'Blog', 'Careers', 'Press', 'Contact'],
-  Resources: ['Docs', 'API Reference', 'Changelog', 'Status', 'Community'],
-  Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Security', 'GDPR'],
+import Link from 'next/link'
+
+const footerLinks: Record<string, { label: string; href: string }[]> = {
+  Product: [
+    { label: 'Dashboard',    href: '#' },
+    { label: 'Automation',   href: '#' },
+    { label: 'Analytics',    href: '#' },
+    { label: 'Integrations', href: '#' },
+  ],
+  Company: [
+    { label: 'About',    href: '#' },
+    { label: 'Blog',     href: '#' },
+    { label: 'Careers',  href: '#' },
+    { label: 'Press',    href: '#' },
+    { label: 'Contact',  href: '/contact' },
+  ],
+  Resources: [
+    { label: 'Docs',          href: '#' },
+    { label: 'API Reference', href: '#' },
+    { label: 'Changelog',     href: '#' },
+    { label: 'Status',        href: '#' },
+    { label: 'Community',     href: '#' },
+  ],
+  Legal: [
+    { label: 'Privacy Policy',   href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Cookie Policy',    href: '#' },
+    { label: 'Security',         href: '#' },
+    { label: 'GDPR',             href: '#' },
+  ],
 }
 
 function TwitterIcon() {
@@ -51,7 +76,7 @@ export default function Footer() {
               Flurbi<span style={{ color: '#06B6D4' }}>x</span>
             </a>
             <p className="font-dm text-sm text-slate-600 dark:text-subtle mt-3 leading-relaxed max-w-[180px] transition-colors duration-300">
-              The operating system for growth teams. Run campaigns, automate workflows, scale smarter.
+              The operating system for growth teams. Automate workflows, scale smarter.
             </p>
             <div className="flex gap-4 mt-5" role="list" aria-label="Social media links">
               {socialLinks.map(({ href, label, Icon }) => (
@@ -75,14 +100,23 @@ export default function Footer() {
             <div key={heading}>
               <h4 className="font-syne font-semibold text-sm text-slate-900 dark:text-white mb-4 transition-colors duration-300">{heading}</h4>
               <ul className="space-y-3" role="list">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="font-dm text-sm text-slate-600 hover:text-navy dark:text-subtle dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan rounded"
-                    >
-                      {link}
-                    </a>
+                {links.map(({ label, href }) => (
+                  <li key={label}>
+                    {href.startsWith('/') ? (
+                      <Link
+                        href={href}
+                        className="font-dm text-sm text-slate-600 hover:text-navy dark:text-subtle dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan rounded"
+                      >
+                        {label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={href}
+                        className="font-dm text-sm text-slate-600 hover:text-navy dark:text-subtle dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan rounded"
+                      >
+                        {label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
