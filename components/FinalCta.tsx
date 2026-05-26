@@ -48,7 +48,7 @@ export default function FinalCta() {
           </MagneticButton>
           <MagneticButton>
             <a
-              href="#contact"
+              href="/contact?subject=Book a Demo"
               className="border border-slate-300 dark:border-white/30 text-slate-800 dark:text-white font-dm px-9 py-3.5 rounded-lg text-base inline-block hover:border-cyan hover:text-cyan transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-navy"
             >
               Book Demo

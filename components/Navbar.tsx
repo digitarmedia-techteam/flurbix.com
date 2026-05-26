@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { useTheme } from '@/context/ThemeContext'
 import ThemeToggle from '@/components/ThemeToggle'
 
@@ -10,13 +11,15 @@ const navLinks = [
   { label: 'Features', href: '#features' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Resources', href: '#resources' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { theme } = useTheme()
+  const pathname = usePathname()
+  const isHome = pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -61,7 +64,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
-                  href={link.href}
+                  href={link.href.startsWith('#') ? (isHome ? link.href : `/${link.href}`) : link.href}
                   className="nav-link font-dm text-sm text-slate-600 dark:text-muted hover:text-slate-900 dark:hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 dark:focus-visible:ring-offset-navy focus-visible:ring-offset-white rounded"
                 >
                   {link.label}
@@ -74,13 +77,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
             <a
-              href="#contact"
+              href="/contact?subject=Book a Demo"
               className="border border-slate-300 dark:border-white/30 text-slate-800 dark:text-white px-4 py-2 rounded-lg text-sm font-dm hover:border-cyan dark:hover:border-cyan hover:text-cyan dark:hover:text-cyan transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 dark:focus-visible:ring-offset-navy focus-visible:ring-offset-white"
             >
               Book Demo
             </a>
             <a
-              href="#pricing"
+              href={isHome ? '#pricing' : '/#pricing'}
               className="bg-cyan text-navy font-bold px-4 py-2 rounded-lg text-sm font-dm hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 dark:focus-visible:ring-offset-navy focus-visible:ring-offset-white"
             >
               Start Free Trial
@@ -152,7 +155,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a
-                    href={link.href}
+                    href={link.href.startsWith('#') ? (isHome ? link.href : `/${link.href}`) : link.href}
                     className="font-syne font-semibold text-2xl text-slate-800 dark:text-white hover:text-cyan transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
@@ -166,14 +169,14 @@ export default function Navbar() {
           {/* Mobile CTAs */}
           <div className="flex flex-col gap-4 mt-auto">
             <a
-              href="#contact"
+              href="/contact?subject=Book a Demo"
               className="border border-slate-300 dark:border-white/30 text-slate-800 dark:text-white text-center px-6 py-3 rounded-lg text-base font-dm hover:border-cyan hover:text-cyan transition-all"
               onClick={() => setMobileOpen(false)}
             >
               Book Demo
             </a>
             <a
-              href="#pricing"
+              href={isHome ? '#pricing' : '/#pricing'}
               className="bg-cyan text-navy font-bold text-center px-6 py-3 rounded-lg text-base font-dm"
               onClick={() => setMobileOpen(false)}
             >

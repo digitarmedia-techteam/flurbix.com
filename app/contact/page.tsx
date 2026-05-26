@@ -291,6 +291,17 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<string[]>([])
   const formRef = useRef<HTMLFormElement>(null)
 
+  // Handle subject query parameter (e.g. ?subject=Book a Demo)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      const subjectParam = params.get('subject')
+      if (subjectParam && SUBJECTS.includes(subjectParam)) {
+        setForm((prev) => ({ ...prev, subject: subjectParam }))
+      }
+    }
+  }, [])
+
   // Scroll reveal
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -513,7 +524,7 @@ export default function ContactPage() {
           <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-8 items-start">
 
             {/* ── Contact Form (3/5) ── */}
-            <div className="lg:col-span-3 reveal-left">
+            <div id="contact-form" className="lg:col-span-3 reveal-left">
               <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-3xl shadow-xl shadow-slate-100 dark:shadow-slate-900/30 overflow-hidden">
                 {/* Card header */}
                 <div className="px-8 pt-8 pb-6 border-b border-slate-100 dark:border-slate-700/50">
@@ -686,8 +697,11 @@ export default function ContactPage() {
                     See Flurbix in action with a personalised walkthrough from our solutions team. No commitment required.
                   </p>
                   <a
-                    href="#contact"
+                    href="#contact-form"
                     id="book-demo-sidebar"
+                    onClick={() => {
+                      setForm((prev) => ({ ...prev, subject: 'Book a Demo' }))
+                    }}
                     className="inline-flex items-center gap-2 font-syne font-bold text-sm px-5 py-3 rounded-xl transition-all duration-200 hover:scale-[1.03]"
                     style={{
                       background: 'linear-gradient(135deg, #06B6D4, #8B5CF6)',
